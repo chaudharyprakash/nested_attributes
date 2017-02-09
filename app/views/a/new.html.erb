@@ -1,0 +1,29 @@
+<%= form_for(:a, url:  a_new_path)  do |f| %>
+	<div class="field">
+	    <%= f.label :name %>
+	    <%= f.text_field :name%>
+	</div>
+	<div class="field">
+	    <%= f.label :age %>
+	    <%= f.text_field :age%>
+	</div>
+	<div class="field">
+	    <%= f.label :address %>
+	    <%= f.text_field :address%>
+	</div>
+
+	<%= f.fields_for :b do |f| %>
+	<p>
+	<%= f.label :fname, "father name" %><br />
+	<%= f.text_field :fname %>
+	  </p>
+	      <p>
+	      <%= f.label :phone, "phone" %><br />
+	   <%= f.text_field :phone %>
+	  </p>
+	   <% end %>
+
+	<div class="actions">
+	    <%= f.submit %>
+	</div>
+<% end %>
